@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ledger">
+      <h2 data-cy="ledgerDetailsHeading"><span jhiTranslate="financijeApp.ledger.detail.title">Ledger</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ ledger.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="financijeApp.ledger.timestamp">Timestamp</span></dt>
+        <dd>
+          <span>{{ ledger.timestamp | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="financijeApp.ledger.date">Date</span></dt>
+        <dd>
+          <span>{{ ledger.date | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="financijeApp.ledger.amount">Amount</span></dt>
+        <dd>
+          <span>{{ ledger.amount }}</span>
+        </dd>
+        <dt><span jhiTranslate="financijeApp.ledger.creditor">Creditor</span></dt>
+        <dd>
+          <div *ngIf="ledger.creditor">
+            <a [routerLink]="['/accountt', ledger.creditor?.id, 'view']">{{ ledger.creditor?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="financijeApp.ledger.debitor">Debitor</span></dt>
+        <dd>
+          <div *ngIf="ledger.debitor">
+            <a [routerLink]="['/accountt', ledger.debitor?.id, 'view']">{{ ledger.debitor?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="financijeApp.ledger.tag">Tag</span></dt>
+        <dd>
+          <span *ngFor="let tag of ledger.tags; let last = last">
+            <a [routerLink]="['/tag', tag?.id, 'view']">{{ tag.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/ledger', ledger.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

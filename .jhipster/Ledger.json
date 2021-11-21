@@ -1,0 +1,49 @@
+{
+  "name": "Ledger",
+  "fields": [
+    {
+      "fieldName": "timestamp",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "accountt",
+      "otherEntityRelationshipName": "ledger",
+      "relationshipName": "creditor"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "accountt",
+      "otherEntityRelationshipName": "ledger",
+      "relationshipName": "debitor"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "tag",
+      "otherEntityRelationshipName": "ledger",
+      "relationshipName": "tag",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "ledger",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "databaseType": "sql",
+  "changelogDate": "20211121000450"
+}

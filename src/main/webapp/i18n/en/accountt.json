@@ -1,0 +1,30 @@
+{
+  "financijeApp": {
+    "accountt": {
+      "home": {
+        "title": "Accountts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Accountt",
+        "createOrEditLabel": "Create or edit a Accountt",
+        "notFound": "No Accountts found"
+      },
+      "created": "A new Accountt is created with identifier {{ param }}",
+      "updated": "A Accountt is updated with identifier {{ param }}",
+      "deleted": "A Accountt is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Accountt {{ id }}?"
+      },
+      "detail": {
+        "title": "Accountt"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "creation": "Creation",
+      "active": "Active",
+      "user": "User",
+      "currency": "Currency",
+      "type": "Type"
+    }
+  }
+}

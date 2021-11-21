@@ -1,0 +1,24 @@
+{
+  "financijeApp": {
+    "accountType": {
+      "home": {
+        "title": "Account Types",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Account Type",
+        "createOrEditLabel": "Create or edit a Account Type",
+        "notFound": "No Account Types found"
+      },
+      "created": "A new Account Type is created with identifier {{ param }}",
+      "updated": "A Account Type is updated with identifier {{ param }}",
+      "deleted": "A Account Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Account Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Account Type"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

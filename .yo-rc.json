@@ -42,7 +42,9 @@
     "clientTheme": "none",
     "clientThemeVariant": "",
     "reactive": false,
-    "enableGradleEnterprise": false
+    "enableGradleEnterprise": false,
+    "entities": ["Tag", "AccountType", "Accountt", "Ledger", "Currency"],
+    "lastLiquibaseTimestamp": 1637453091000
   },
   "git-provider": "GitHub",
   "git-company": "kluksa",

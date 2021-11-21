@@ -51,6 +51,13 @@ public class CacheConfiguration {
             createCache(cm, com.kluksa.financije.domain.User.class.getName());
             createCache(cm, com.kluksa.financije.domain.Authority.class.getName());
             createCache(cm, com.kluksa.financije.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.kluksa.financije.domain.Tag.class.getName());
+            createCache(cm, com.kluksa.financije.domain.Tag.class.getName() + ".ledgers");
+            createCache(cm, com.kluksa.financije.domain.AccountType.class.getName());
+            createCache(cm, com.kluksa.financije.domain.Accountt.class.getName());
+            createCache(cm, com.kluksa.financije.domain.Ledger.class.getName());
+            createCache(cm, com.kluksa.financije.domain.Ledger.class.getName() + ".tags");
+            createCache(cm, com.kluksa.financije.domain.Currency.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
