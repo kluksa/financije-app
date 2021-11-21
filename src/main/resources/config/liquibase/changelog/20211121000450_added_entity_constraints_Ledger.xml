@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Ledger.
+    -->
+    <changeSet id="20211121000450-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="creditor_id"
+                                 baseTableName="ledger"
+                                 constraintName="fk_ledger__creditor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accountt"/>
+
+        <addForeignKeyConstraint baseColumnNames="debitor_id"
+                                 baseTableName="ledger"
+                                 constraintName="fk_ledger__debitor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="accountt"/>
+
+        <addForeignKeyConstraint baseColumnNames="ledger_id"
+                                 baseTableName="rel_ledger__tag"
+                                 constraintName="fk_rel_ledger__tag__ledger_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ledger"/>
+
+        <addForeignKeyConstraint baseColumnNames="tag_id"
+                                 baseTableName="rel_ledger__tag"
+                                 constraintName="fk_rel_ledger__tag__tag_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tag"/>
+    </changeSet>
+</databaseChangeLog>
