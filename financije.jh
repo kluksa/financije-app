@@ -1,0 +1,42 @@
+entity Tag {
+	name String,
+    description String,
+}
+
+entity User {
+	username String,
+}
+
+entity AccountType {
+	name String,
+}
+
+entity Account {
+	name String,
+    description String,
+    creation LocalDate,
+    active Boolean,
+}
+
+entity Ledger {
+	timestamp Instant,
+    date LocalDate,
+    amount BigDecimal,
+}
+
+entity Currency {
+	code String,
+    name String,
+}
+
+relationship ManyToOne{
+	Account{user} to User,
+    Account{currency} to Currency,
+    Account{type} to AccountType,
+    Ledger{creditor} to Account,
+    Ledger{debitor} to Account,
+}
+
+relationship ManyToMany {
+	Ledger to Tag
+}
